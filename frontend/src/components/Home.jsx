@@ -13,7 +13,7 @@ const Home = () => {
   const [data, setdata] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/get")
+      .get("https://mern-deploy-api-tawny.vercel.app/get")
       .then((res) => {
         console.log(res);
         setdata(res.data);
