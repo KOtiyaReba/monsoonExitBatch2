@@ -13,12 +13,12 @@ const Add = () => {
   const inputHandler = (e) => {
     console.log(e.target.value);
     setInputs({ ...inputs, [e.target.name]: e.target.value });
-    console.log("in",inputs);
+    console.log("in", inputs);
   };
   const addData = () => {
     console.log("clicked");
     axios
-      .post("http://localhost:3001/add",inputs)
+      .post("https://mern-deploy-api-tawny.vercel.app/add", inputs)
       .then((res) => {
         alert(res.data.message);
         navigate("/");
