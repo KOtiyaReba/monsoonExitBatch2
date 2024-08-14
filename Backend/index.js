@@ -4,14 +4,17 @@ const cors = require("cors");
 const app = express();
 var PORT = 3001;
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["https://monsoon-exit-batch2.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+const allowedOrigins = ['https://monsoon-exit-batch2.vercel.app', 'https://another-domain.com'];
 
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 require("./connection");
 const BlogModel = require("./model");
 
