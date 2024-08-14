@@ -18,7 +18,7 @@ const Add = () => {
   const addData = () => {
     console.log("clicked");
     axios
-      .post("http://localhost:3001/add",inputs)
+      .post("https://mern-deploy-api-tawny.vercel.app/add",inputs)
       .then((res) => {
         alert(res.data.message);
         navigate("/");
