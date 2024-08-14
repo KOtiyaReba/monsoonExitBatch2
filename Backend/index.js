@@ -14,10 +14,10 @@ app.use(
 
 require("./connection");
 const BlogModel = require("./model");
-app.get("/", (req, res) => {
-  res.send("Hello!!");
-});
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+})
 app.post("/add", async (req, res) => {
   try {
     console.log(req.body);
