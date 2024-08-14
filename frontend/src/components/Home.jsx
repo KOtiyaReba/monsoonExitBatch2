@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
+axios.defaults.withCredentials = true;
 const Home = () => {
   const [data, setdata] = useState([]);
   useEffect(() => {
