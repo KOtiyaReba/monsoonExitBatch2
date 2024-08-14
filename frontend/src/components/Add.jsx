@@ -2,7 +2,7 @@ import { Box, Button, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-
+axios.defaults.withCredentials = true;
 const Add = () => {
   const navigate = useNavigate();
   var [inputs, setInputs] = useState({
