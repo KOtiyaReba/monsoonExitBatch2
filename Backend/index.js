@@ -14,6 +14,9 @@ app.use(
 
 require("./connection");
 const BlogModel = require("./model");
+app.get("/", (req, res) => {
+  res.send("Hello!!");
+});
 
 app.post("/add", async (req, res) => {
   try {
